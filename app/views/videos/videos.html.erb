@@ -13,8 +13,17 @@
     or
   <input lift> -->
 
- <form action="/search/videos" method="post">
+  <select>
+  <option value="">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+
+ <form action="/lifts/videos" method="post">
   <input type="hidden" name="url" value="<%= video.player_url %>">
+  <input type="hidden" name="title" value="<%= video.title %>">
   <button>save</button>
 
 
