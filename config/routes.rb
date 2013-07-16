@@ -10,6 +10,8 @@ YouTube::Application.routes.draw do
 
   post '/lifts/videos' => 'videos#create'
 
+  ########LIFTS##########
+
   get '/lifts' => 'lifts#index'
 
   post '/lifts' => 'lifts#lifts_create'

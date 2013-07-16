@@ -12,9 +12,10 @@
 <form action="/lifts/videos" method="post">
   <label for="description">Description</label></br>
   <input type="text" name="description">
-  <select>
+
+  <select name="lift">
     <% @lifts.each do |lift| %>
-  <option value="<%= lift.name %>"><%= lift.name %></option>
+  <option value="<%= lift.id %>"><%= lift.name %></option>
     <% end %>
   </select>
 

@@ -32,10 +32,12 @@ def create
   video = Video.new
   video.name = params[:title]
   video.url = params[:url]
+  video.description = params[:description]
+  video.lift_id = params[:lift]
   video.save
   #this is just to test if info is reaching
   #the database and will be changed
-  redirect_to '/search/videos/show'
+  redirect_to '/index'
 end
 
 
