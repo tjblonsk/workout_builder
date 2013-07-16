@@ -1,8 +1,8 @@
 YouTube::Application.routes.draw do
 
-  get '/' => 'videos#index'
+  get '/' => 'videos#index', as: :index
 
-  get '/search' => 'videos#search'
+  get '/search' => 'videos#search', as: :search
 
   get '/search/videos' => 'videos#videos'
 

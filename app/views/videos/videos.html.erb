@@ -8,29 +8,21 @@
       <li>Dislikes:<%= video.rating.dislikes %></li>
       <li>Total votes:<%= video.rating.rater_count %></li>
   </ul>
-  </li>
- <!--  <Drop down for lifts>
-    or
-  <input lift> -->
-
+  </br>
+<form action="/lifts/videos" method="post">
+  <label for="description">Description</label></br>
+  <input type="text" name="description">
   <select>
-  <option value="">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+    <% @lifts.each do |lift| %>
+  <option value="<%= lift.name %>"><%= lift.name %></option>
+    <% end %>
+  </select>
 
-
- <form action="/lifts/videos" method="post">
   <input type="hidden" name="url" value="<%= video.player_url %>">
   <input type="hidden" name="title" value="<%= video.title %>">
   <button>save</button>
-
-
+</li>
 </br>
 </ul>
 <% end %>
 
-
-<!-- .title
-.video_id -->

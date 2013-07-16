@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <%= link_to "Index", index_path %>
+    <%= link_to "search", search_path %>
+
+  </nav>
 
 <%= yield %>
 

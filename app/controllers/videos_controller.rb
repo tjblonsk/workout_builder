@@ -12,6 +12,7 @@ def videos
   @client = YouTubeIt::Client.new
   description = params[:description]
   @videos = @client.videos_by(:query => description)
+  @lifts = Lift.all
 end
 
 
@@ -21,6 +22,8 @@ def show
   @saved_videos = Video.all
 end
 
+def new
+end
 
 def create
   url = params[:url]
