@@ -1,0 +1,9 @@
+<h1>All Videos</h1>
+
+<ul>
+  <% @videos.each do |video| %>
+  <li><a href="<%= video.url %>"><%= video.name %></a>
+      (<%= video.lift_id %>)
+  </li>
+</ul>
+  <% end %>

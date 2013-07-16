@@ -1,1 +1,18 @@
-<%= @video %>
+<h1><%= @lift.name %></h1>
+
+<ul>
+  <% @videos.each do |video| %>
+  <li><a href="<%= video.url %>"><%= video.name %></a>
+      <ul>
+        <li><%= video.description %></li>
+        <li>Date Added: <%= video.created_at %></li>
+      </ul>
+
+  <form action="/lifts/<%= video.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>DELETE VIDEO</button>
+  </form>
+  </li>
+  <% end %>
+
+</ul>

@@ -1,6 +1,6 @@
  <ul>
   <% @videos.videos.each do |video| %>
-  <li><a href="<%= video.player_url %>"><%= video.title %></a>
+  <li><a href="<%= video.player_url %>" target="_blank"><%= video.title %></a>
 </form>
   <ul>
       <li>Average rating:<%= video.rating.average %></li>

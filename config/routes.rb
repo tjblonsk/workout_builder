@@ -6,23 +6,21 @@ YouTube::Application.routes.draw do
 
   get '/search/videos' => 'videos#videos'
 
-  get '/search/videos/show' => 'videos#show'
-
   post '/lifts/videos' => 'videos#create'
 
   ########LIFTS##########
 
-  get '/lifts' => 'lifts#index'
+  get '/lifts' => 'lifts#index', as: :lifts_index
 
-  post '/lifts' => 'lifts#lifts_create'
+  post '/lifts' => 'lifts#create'
 
   get '/lifts/videos' => 'lifts#lifts_videos'
 
-  get '/lifts/videos/:id' => 'lifts#show'
+  get '/lifts/:id' => 'lifts#show'
 
   delete '/lifts/videos/:id' => 'lifts#destroy'
 
-  #delete '/lifts' => 'lifts#destroy'
+  delete '/lifts/:id' => 'lifts#destroy'
 
 end
 
