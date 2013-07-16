@@ -1,0 +1,5 @@
+To do:
+
+Add drop down feature to create new "lift" (quads).
+Add an other field, if the user selects other, it
+allows them to type in a

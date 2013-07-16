@@ -1,0 +1,11 @@
+common: &common
+  dev_key: AI39si5-7XZw2ufLKm77lTo2j3gcei6Szwun1eD2W-I2dyIi9RJBfgaqgQe0ZPVFTWCrlSto1lNS3d1NUiZAH4zqXiz06u_IQA
+  username:  timothy blonski
+  password:  Tjb/1988
+
+test:
+  <<: *common
+development:
+  <<: *common
+production:
+  <<: *common

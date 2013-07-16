@@ -1,0 +1,27 @@
+ <ul>
+  <% @videos.videos.each do |video| %>
+  <li><a href="<%= video.player_url %>"><%= video.title %></a>
+</form>
+  <ul>
+      <li>Average rating:<%= video.rating.average %></li>
+      <li>Likes:<%= video.rating.likes %></li>
+      <li>Dislikes:<%= video.rating.dislikes %></li>
+      <li>Total votes:<%= video.rating.rater_count %></li>
+  </ul>
+  </li>
+ <!--  <Drop down for lifts>
+    or
+  <input lift> -->
+
+ <form action="/search/videos" method="post">
+  <input type="hidden" name="url" value="<%= video.player_url %>">
+  <button>save</button>
+
+
+</br>
+</ul>
+<% end %>
+
+
+<!-- .title
+.video_id -->
