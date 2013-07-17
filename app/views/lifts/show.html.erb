@@ -2,7 +2,7 @@
 
 <ul>
   <% @videos.each do |video| %>
-  <li><a href="<%= video.url %>"><%= video.name %></a>
+  <li><a href="<%= video.url %>" target="_blank"><%= video.name %></a>
       <ul>
         <li><%= video.description %></li>
         <li>Date Added: <%= video.created_at %></li>

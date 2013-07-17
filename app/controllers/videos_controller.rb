@@ -7,7 +7,8 @@ class VideosController < ApplicationController
   def search
   end
 
-
+  #show all the videos resulting from a search entered
+  #in the search actions
   def videos
     @client = YouTubeIt::Client.new
     description = params[:description]
@@ -28,6 +29,8 @@ class VideosController < ApplicationController
   def new
   end
 
+  #save a video to the database and add video to
+  #a lift category
   def create
     url = params[:url]
     video = Video.new
@@ -40,7 +43,8 @@ class VideosController < ApplicationController
     redirect_to '/lifts'
   end
 
-def destroy
+  #delete video
+  def destroy
     contact = Contact.find(params[:id])
     contact.destroy
     redirect_to('/contacts')

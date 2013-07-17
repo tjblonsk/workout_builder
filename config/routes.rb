@@ -18,16 +18,21 @@ YouTube::Application.routes.draw do
 
   get '/lifts/:id' => 'lifts#show'
 
+  #to delete a single video
   delete '/lifts/videos/:id' => 'lifts#destroy'
+
+  #Will not allow users to delete entire categories
+  # delete '/lifts/:id' => 'lifts#destroy'
+
+  #########USERS#########
+
+  get '/users' => 'users#index', as: :users_index
+
+  post '/users' => 'users#create'
+
+  get '/users/:id' => 'users#show'
 
   delete '/lifts/:id' => 'lifts#destroy'
 
 end
 
-
- # get '/books' => 'books#index'
- #  get '/books/new' => 'books#new'
- #  post '/books' => 'books#create'
- #  get '/books/:id' => 'books#show'
- #  put '/books/:id' => 'books#update'
- #  delete '/books/:id' => 'books#destroy'
