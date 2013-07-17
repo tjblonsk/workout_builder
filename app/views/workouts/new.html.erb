@@ -1,0 +1,14 @@
+<h1>Create a workout</h1>
+
+<%= form_for @workout do |f| %>
+  <%= f.label :name %></br>
+  <%= f.text_field :name %></br>
+  <%= f.label :description %></br>
+  <%= f.text_field :description %></br>
+
+  <% Video.all.each do |video| %>
+    <%= label_tag video.name %>
+    <%= check_box_tag "workout[video_ids][]", video.id, @workout.videos.include?(video) %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

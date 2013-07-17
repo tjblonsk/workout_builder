@@ -34,5 +34,24 @@ YouTube::Application.routes.draw do
 
   delete '/lifts/:id' => 'lifts#destroy'
 
+
+  ######WORKOUTS######
+  #show all workouts as a link
+  get '/workouts' => 'workouts#index', as: :workouts_index
+
+  get '/workouts/new' => 'workouts#new', as: :new_workout
+
+
+  post '/workouts' => 'workouts#create'
+
+
+
+  #show details of a specific workout
+  get '/workouts/:id' => 'workouts#show'
+
+  #to delete a single video
+  #I'll come back to this
+  #delete '/workouts/videos/:id' => 'lifts#destroy'
+
 end
 
