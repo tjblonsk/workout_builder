@@ -33,7 +33,7 @@ class VideosController < ApplicationController
   #a lift category
   def create
     video = Video.find_or_create_by_name(:name => params[:title], :url => params[:url], :description => params[:description], :lift_id => params[:lift])
-
+    video.users << current_user
     redirect_to '/lifts'
     #redirect_to '/lifts/#{video.lift_id}'
     end

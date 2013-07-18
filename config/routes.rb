@@ -2,7 +2,9 @@ YouTube::Application.routes.draw do
 
   devise_for :users
 
-  root :to => 'videos#index', as: :index
+  root :to => 'users#index', as: :index
+
+  get '/profile' => 'users#profile', as: :profile
 
   get '/search' => 'videos#search', as: :search
 
@@ -16,9 +18,9 @@ YouTube::Application.routes.draw do
 
   post '/lifts' => 'lifts#create'
 
-  get '/lifts/videos' => 'lifts#lifts_videos'
+  get '/lifts/videos' => 'lifts#lifts_videos', as: :lifts_videos
 
-  get '/lifts/:id' => 'lifts#show'
+  get '/lifts/:id' => 'lifts#show', as: :lifts_show
 
   #to delete a single video
   delete '/lifts/videos/:id' => 'lifts#destroy'

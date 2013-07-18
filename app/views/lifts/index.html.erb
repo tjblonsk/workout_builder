@@ -2,15 +2,17 @@
 
 <ul>
   <% @lifts.each do |lift| %>
-    <li><a href="/lifts/<%= lift.id %>"><%= lift.name %></a> (<%= lift.videos.count %>)
+    <li><a href="/lifts/<%= lift.id %>"><%= lift.name %></a>
+     (<%= lift.videos.count %>)
     </li></br>
   <% end %>
-    <li><a href="/lifts/videos">All Videos</a></li>
+    <li><%= link_to "All Videos",  lifts_videos_path %> (<%= @videos.count %>)
+    </li>
 </ul>
 
 <h3>Create new lift category</h3>
-<form action="/lifts" method="post">
-  <label for="name">Name</label></br>
-  <input type="text" name="name" placeholder="enter a new category">
-  <button>save</button>
-</form>
+<%= form_for @lift do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :placeholder => "Enter a new category" %>
+  <%= f.submit %>
+<% end %>

@@ -1,8 +1,14 @@
+<h1>Hello <%= current_user.username %></h1>
+<h2>Welcome to WorkoutBuilder!</h2>
 
 
 
-
-
+<h3><%= link_to "Home", index_path %>
+<%= link_to "search", search_path %>
+<%= link_to "my_lifts", lifts_index_path %>
+<%= link_to "my_workouts", workouts_index_path %></h3>
+</br>
+</br>
 About: WorkoutBuilder is the best way to find and quickly reference exercise specific instructional videos on YouTube. It allows you to find and reference videos based on muscle category or a specific workout (that you create!).
 
 Out motto: "What would Arnold do?"

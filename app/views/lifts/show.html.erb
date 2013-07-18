@@ -7,12 +7,11 @@
         <li><%= video.description %></li>
         <li>Date Added: <%= video.created_at %></li>
       </ul>
-
-  <form action="/lifts/<%= video.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button>DELETE VIDEO</button>
-  </form>
+<%= button_to "delete", {:controller => :lifts,
+      :action => 'destroy', :id => video.id },     :method => :delete %>
   </li>
   <% end %>
-
 </ul>
+
+
+
