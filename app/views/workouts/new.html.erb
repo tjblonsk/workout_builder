@@ -1,14 +1,16 @@
 <h1>Create a workout</h1>
 
-<%= form_for @workout do |f| %>
-  <%= f.label :name %></br>
-  <%= f.text_field :name %></br>
-  <%= f.label :description %></br>
-  <%= f.text_field :description %></br>
+<form action="/workouts" method="post">
+  <label for="name">Workout Name</label></br>
+  <input type="text" name="name" placeholder="enter a workout name"></br>
+  <label for="description">Description</label></br>
+  <input type="text" name="description" placeholder="enter a brief description"></br>
 
+<h4>Select videos for this workout</h4>
   <% Video.all.each do |video| %>
-    <%= label_tag video.name %>
-    <%= check_box_tag "workout[video_ids][]", video.id, @workout.videos.include?(video) %>
-  <% end %>
-  <%= f.submit %>
+    <%= link_to video.name, video.url, :target => '_blank' %></br>
+    <%= check_box_tag "workout[video_ids][]", video.id, @workout.videos.include?(video) %></br>
 <% end %>
+<button>save</button>
+</form>
+

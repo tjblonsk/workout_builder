@@ -2,7 +2,14 @@
 
 <ul>
   <% @workouts.each do |wo| %>
-    <li><a href="/workouts/<%= wo.id %>"><%= wo.name %></a> (<%= wo.videos.count %>)
+    <li><a href="/workouts/<%= wo.id %>"><%= wo.name %></a> (<%= wo.videos.count %> videos)
+      <% if wo.description.nil? %>
+        <%= %>
+      <% else %>
+      <ul>
+        <li><%= wo.description %></li>
+      </ul>
+      <% end %>
     </li></br>
   <% end %>
 </ul>

@@ -26,7 +26,7 @@ class LiftsController < ApplicationController
     redirect_to lifts_index_path
   end
 
-  #delete a specific video
+  #delete a specific video from a lift
   def destroy
     video = Video.find(params[:id])
     video.destroy

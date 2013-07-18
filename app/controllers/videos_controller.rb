@@ -32,22 +32,17 @@ class VideosController < ApplicationController
   #save a video to the database and add video to
   #a lift category
   def create
-    url = params[:url]
-    video = Video.new
-    video.name = params[:title]
-    video.url = params[:url]
-    video.description = params[:description]
-    video.lift_id = params[:lift]
-    video.save
+    video = Video.find_or_create_by_name(:name => params[:title], :url => params[:url], :description => params[:description], :lift_id => params[:lift])
 
     redirect_to '/lifts'
+    #redirect_to '/lifts/#{video.lift_id}'
+    end
   end
 
   #delete video
-  def destroy
-    contact = Contact.find(params[:id])
-    contact.destroy
-    redirect_to('/contacts')
-  end
-
-end
+  # def destroy
+  #   video = Video.find(params[:id])
+  #   video.destroy
+  #   redirect_to('/contacts')
+  # end
+# end

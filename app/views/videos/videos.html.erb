@@ -1,13 +1,22 @@
- <ul>
+
   <% @videos.videos.each do |video| %>
-  <li><a href="<%= video.player_url %>" target="_blank"><%= video.title %></a>
-</form>
   <ul>
-      <li>Average rating:<%= video.rating.average %></li>
-      <li>Likes:<%= video.rating.likes %></li>
-      <li>Dislikes:<%= video.rating.dislikes %></li>
-      <li>Total votes:<%= video.rating.rater_count %></li>
-  </ul>
+    <li><%= link_to video.title, video.player_url,
+     :target => '_blank' %>
+      <% if video.rating.nil? %>
+      <ul>
+        <li>Views: <%= video.view_count %></li>
+        <li><%= "no rating" %></li>
+      </ul>
+      <% else %>
+      <ul>
+        <li>Views: <%= video.view_count %></li>
+        <li>Average rating: <%= video.rating.average %></li>
+        <li>Likes: <%= video.rating.likes %></li>
+        <li>Dislikes: <%= video.rating.dislikes %></li>
+        <li>Total votes: <%= video.rating.rater_count %></li>
+    </ul>
+    <% end %>
   </br>
 <form action="/lifts/videos" method="post">
   <label for="description">Description</label></br>
@@ -22,6 +31,7 @@
   <input type="hidden" name="url" value="<%= video.player_url %>">
   <input type="hidden" name="title" value="<%= video.title %>">
   <button>save</button>
+</form>
 </li>
 </br>
 </ul>

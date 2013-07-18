@@ -8,14 +8,17 @@
 </head>
 <body>
   <nav>
-    <%= link_to "Index", index_path %>
-    <%= link_to "search", search_path %>
-    <%= link_to "my_lifts", lifts_index_path %>
-    <%= link_to "my_workouts", workouts_index_path %>
+    <li><%= link_to "Index", index_path %></li>
+    <li><%= link_to "search", search_path %></li>
+    <li><%= link_to "my_lifts", lifts_index_path %></li>
+    <li><%= link_to "my_workouts", workouts_index_path %></li>
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
   </nav>
 
 
-
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
