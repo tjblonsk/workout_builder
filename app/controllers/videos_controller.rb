@@ -45,7 +45,7 @@ class VideosController < ApplicationController
     video.save
 
 
-    video.users << current_user
+    # video.users << current_user
     redirect_to '/lifts'
     #redirect_to '/lifts/#{video.lift_id}'
     end

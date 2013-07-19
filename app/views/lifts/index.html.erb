@@ -1,13 +1,15 @@
-<h1>My Lifts</h1>
+<h1>Arnold says: These are your Lifts!</h1>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3-hQ1YuCsEuMgyGuJX_-gAT-AFUI55zmZc04qhMPmniE7HZsK">
 
 <ul>
-  <% @videos.each do |video| %>
-   <li> <%= link_to video.name, video.url, :target => '_blank' %> <%= Lift.find(video.lift_id).name %>
-      <ul>
-        <li><%= video.description %></li>
-      </ul>
-   </li>
-<% end %>
+  <% @lifts.each do |lift| %>
+    <li><a href="/lifts/<%= lift.id %>"><%= lift.name %></a>
+     (<%= lift.videos.count %>)
+    </li></br>
+  <% end %>
+    <li><%= link_to "All Videos",  lifts_videos_path %> (<%= @videos.count %>)
+    </li>
 </ul>
 
 <h3>Create new lift category</h3>
