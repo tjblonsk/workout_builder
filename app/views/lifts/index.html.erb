@@ -11,6 +11,7 @@
 </ul>
 
 <h3>Create new lift category</h3>
+<h6>This will be added to the dropdown in video search</h6>
 <%= form_for(@lift, :url => videos_path, :method => :post) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, :placeholder => "Enter a new category" %>
