@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="inline">
+  <nav class="navbar-inner">
     <li><%= link_to "Home", index_path %></li>
-    <li><%= link_to "search", search_path %></li>
-    <li><%= link_to "my_lifts", lifts_index_path %></li>
-    <li><%= link_to "my_workouts", workouts_index_path %></li>
+    <li><%= link_to "Search", search_path %></li>
+    <li><%= link_to "My Lifts", lifts_index_path %></li>
+    <li><%= link_to "My Workouts", workouts_index_path %></li>
   <%= render 'devise/menu/registration_items' %>
   <%= render 'devise/menu/login_items' %>
   </nav>

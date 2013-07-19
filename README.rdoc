@@ -1,5 +1,21 @@
 To do:
 
-Add drop down feature to create new "lift" (quads).
-Add an other field, if the user selects other, it
-allows them to type in a
+-Fix Users table relation
+
+-Better routing and more confirmations
+
+-More error handling, validations, and notices
+
+-Embed videos
+
+-More functionality withing workouts to update, alter, classify
+
+-Add comments to videos and workouts. (tips, workout data, etc)
+
+-Refactor
+  -remove lingering html tables and <a hrefs>
+  -add partials
+
+-More personal information and functionality in the profile page
+
+-Styling
