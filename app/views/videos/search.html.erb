@@ -1,6 +1,9 @@
 <h1>Search for a Video!</h1>
 
-<form action="/search/videos" method="get">
-  <input type="text" name="description">
-  <button>search</button>
-</form>
+
+<%= form_tag("/search/videos", method: "get") do %>
+  <%= label_tag(:description, "Search for:") %>
+  <%= text_field_tag(:description) %>
+  <%= submit_tag("Search") %>
+<% end %>
+

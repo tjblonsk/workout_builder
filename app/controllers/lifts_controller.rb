@@ -4,7 +4,10 @@ class LiftsController < ApplicationController
   def index
     @lifts = Lift.all
     @lift = Lift.new
-    @videos = Video.all
+    # @videos = Video.all
+
+    @videos = current_user.videos
+
   end
 
   #show all videos in a given category

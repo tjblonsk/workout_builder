@@ -10,13 +10,13 @@ YouTube::Application.routes.draw do
 
   get '/search/videos' => 'videos#videos'
 
-  post '/lifts/videos' => 'videos#create'
+  post '/lifts/videos' => 'videos#create', as: :create
 
   ########LIFTS##########
 
   get '/lifts' => 'lifts#index', as: :lifts_index
 
-  post '/lifts' => 'lifts#create'
+  post '/lifts' => 'lifts#create', as: :videos
 
   get '/lifts/videos' => 'lifts#lifts_videos', as: :lifts_videos
 

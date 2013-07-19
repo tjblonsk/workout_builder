@@ -11,9 +11,9 @@ class VideosController < ApplicationController
   #in the search actions
   def videos
     @client = YouTubeIt::Client.new
-    description = params[:description]
-    @videos = @client.videos_by(:query => description)
+    @videos = @client.videos_by(:query => params[:description])
     @lifts = Lift.all
+    @video = Video.new
   end
 
 
@@ -32,7 +32,19 @@ class VideosController < ApplicationController
   #save a video to the database and add video to
   #a lift category
   def create
-    video = Video.find_or_create_by_name(:name => params[:title], :url => params[:url], :description => params[:description], :lift_id => params[:lift])
+    name = params[:name]
+    description = params[:video][:description]
+    url = params[:url]
+    lift_id = params[:video][:lift_id]
+    # video = Video.create(:name => params[:name], :url => params[:url], :description => params[:description], :lift_id => [params[:lift_id]])
+    video = Video.new
+    video.name = name
+    video.description = description
+    video.url = url
+    video.lift_id = lift_id
+    video.save
+
+
     video.users << current_user
     redirect_to '/lifts'
     #redirect_to '/lifts/#{video.lift_id}'

@@ -1,17 +1,17 @@
 <h1>My Lifts</h1>
 
 <ul>
-  <% @lifts.each do |lift| %>
-    <li><a href="/lifts/<%= lift.id %>"><%= lift.name %></a>
-     (<%= lift.videos.count %>)
-    </li></br>
-  <% end %>
-    <li><%= link_to "All Videos",  lifts_videos_path %> (<%= @videos.count %>)
-    </li>
+  <% @videos.each do |video| %>
+   <li> <%= link_to video.name, video.url, :target => '_blank' %> <%= Lift.find(video.lift_id).name %>
+      <ul>
+        <li><%= video.description %></li>
+      </ul>
+   </li>
+<% end %>
 </ul>
 
 <h3>Create new lift category</h3>
-<%= form_for @lift do |f| %>
+<%= form_for(@lift, :url => videos_path, :method => :post) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, :placeholder => "Enter a new category" %>
   <%= f.submit %>
