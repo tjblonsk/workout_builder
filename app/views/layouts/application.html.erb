@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
+  <nav class="inline">
     <li><%= link_to "Home", index_path %></li>
     <li><%= link_to "search", search_path %></li>
     <li><%= link_to "my_lifts", lifts_index_path %></li>
@@ -17,10 +17,27 @@
   </nav>
 
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<main role="main">
+    <div class="container">
+    <div class="content alinacenter">
+      <div class="row">
+        <div class="span12">
 
-<%= yield %>
+          <% if notice %>
+              <p class="notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+              <p class="alert"><%= alert %></p>
+          <% end %>
+          <br />
+          <%= yield %>
+        </div>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>

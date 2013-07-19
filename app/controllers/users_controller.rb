@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   # GET /users
 
   def index
+    if current_user
+      redirect_to '/profile'
+    end
     @user = current_user
   end
 

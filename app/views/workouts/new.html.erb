@@ -8,7 +8,7 @@
 
 <h4>Select videos for this workout</h4>
   <% Video.all.each do |video| %>
-    <%= link_to video.name, video.url, :target => '_blank' %></br>
+    <%= link_to video.name, video.url, :target => '_blank' %> <%= Lift.find(video.lift_id).name %></br>
     <%= check_box_tag "workout[video_ids][]", video.id, @workout.videos.include?(video) %></br>
 <% end %>
 <button>save</button>
