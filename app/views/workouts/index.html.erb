@@ -1,9 +1,9 @@
 <h1>Arnold says: These are your workouts!</h1>
-<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2LKrlWQrmg31NrUEOdo3MkzLcmvHZUw2ONFgKyucLpcWwGC2I"
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2LKrlWQrmg31NrUEOdo3MkzLcmvHZUw2ONFgKyucLpcWwGC2I">
 
 <ul>
   <% @workouts.each do |wo| %>
-    <li><a href="/workouts/<%= wo.id %>"><%= wo.name %></a> (<%= wo.videos.count %> videos)
+    <li><h4><a href="/workouts/<%= wo.id %>"><%= wo.name %></a></h4> (<%= wo.videos.count %> videos)
       <% if wo.description.nil? %>
         <%= %>
       <% else %>
@@ -15,5 +15,5 @@
   <% end %>
 </ul>
 
-<%= link_to "Create Workout", new_workout_path %>
+<h3><%= link_to "Create Workout", new_workout_path %></h3>
 

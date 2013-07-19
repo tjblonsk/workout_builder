@@ -1,8 +1,10 @@
-<h1><%= @workout.name %></h1>(Created: <%= @workout.created_at %>)
+<h1>Arnold says: This is workout <%= @workout.name %></h1>(Created: <%= @workout.created_at %>)
 
 <ul>
 <% @workout.videos.each do |video| %>
   <li><%= link_to video.name, video.url, :target => '_blank' %> ( <%= Lift.find(video.lift_id).name %> ) </li>
   <% end %>
 </ul>
+
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcStOHJKmeP2VXVMGPrXkX3qY5wML7r5lz_YTLNf-J_nRQRLjtQo">
 
