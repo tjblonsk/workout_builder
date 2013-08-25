@@ -1,5 +1,4 @@
 <h1>Arnold loves all your workout videos!</h1>
-  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS0gWkAl6UXnjhnQU8KVYrLuTMKdNinm76004ImVV6fd483wcWC">
 <ul>
 <% @videos.each do |video| %>
   <li><%= link_to video.name, video.url, :target => '_blank' %>
