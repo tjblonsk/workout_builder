@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :videos
   has_many :workouts
-  attr_accessible :username
+  attr_accessible :email, :password, :username, :password_confirmation, :name
 
 end

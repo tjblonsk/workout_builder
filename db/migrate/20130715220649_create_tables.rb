@@ -2,6 +2,8 @@ class CreateTables < ActiveRecord::Migration
   def up
     create_table :users do |t|
       t.string :username
+      t.string :email
+      t.string :password
       t.integer :video_id
       t.timestamps
     end
