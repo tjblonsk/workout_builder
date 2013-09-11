@@ -2,6 +2,7 @@ class CreateTables < ActiveRecord::Migration
   def up
     create_table :users do |t|
       t.string :username
+      t.integer :video_id
       t.timestamps
     end
 
@@ -15,6 +16,7 @@ class CreateTables < ActiveRecord::Migration
       t.string :description
       t.string :url
       t.integer :lift_id
+      t.integer :user_id
       t.timestamps
     end
 
@@ -23,11 +25,6 @@ class CreateTables < ActiveRecord::Migration
      t.string :description
      t.integer :user_id
      t.timestamps
-    end
-
-    create_table :users_videos, :id => false do |t|
-      t.integer :user_id
-      t.integer :video_id
     end
 
     create_table :videos_workouts, :id => false do |t|

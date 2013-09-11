@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  belongs_to :user
   has_and_belongs_to_many :workouts
   belongs_to :lift
-  attr_accessible :name, :url, :description, :lift_id
+  attr_accessible :name, :url, :description
 end
