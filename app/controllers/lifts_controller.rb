@@ -2,9 +2,9 @@ class LiftsController < ApplicationController
 
   #Show all lift categories
   def index
-    @lifts = Lift.all
+    @lifts = current_user.lifts
     @lift = Lift.new
-    @videos = Video.all
+    @videos = current_user.videos
 
     # @videos = current_user.videos
 
@@ -18,16 +18,14 @@ class LiftsController < ApplicationController
 
   #show all videos
   def lifts_videos
-    @videos = Video.all
-    # @lifts = Lift.all
+    @videos = current_user.videos
   end
 
   #need to create a new lift category
   def create
     @lift = Lift.new(params[:lift])
-    @lift.save
+    current_user.lifts << @lift
 
-    # current_user.lifts << lift
     redirect_to lifts_index_path
   end
 

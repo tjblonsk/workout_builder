@@ -42,10 +42,8 @@ class VideosController < ApplicationController
     video.description = description
     video.url = url
     video.lift_id = lift_id
-    video.save
+    current_user.videos << video
 
-
-    # video.users << current_user
     redirect_to '/lifts'
     #redirect_to '/lifts/#{video.lift_id}'
     end
