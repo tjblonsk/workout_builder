@@ -3,11 +3,14 @@ class CreateTables < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username
       t.integer :video_id
+      t.integer :lift_id
+      t.integer :workouts
       t.timestamps
     end
 
     create_table :lifts do |t|
       t.string :name
+      t.integer :user_id
       t.timestamps
     end
 

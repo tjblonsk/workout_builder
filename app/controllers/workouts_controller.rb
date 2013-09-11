@@ -7,6 +7,7 @@ class WorkoutsController < ApplicationController
 
   #action for creating a new workout name, desc, and adding videos
   def new
+    @user = current_user
     @workout = Workout.new
   end
 
