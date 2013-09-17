@@ -29,3 +29,94 @@ h1 {
 }
 
 .home a:last-child; {border-right: none}
+
+
+.profile_index_class {
+  text-align: center;
+}
+
+
+.span4 {
+  width: 250px;
+  float: left;
+  height: 300px; /*Specify Height*/
+  display:inline-block;
+  position: relative;
+}
+
+/*p {
+  margin: 0 0 10px;
+}*/
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
+  /*width: 600px;*/
+  display:inline-block;
+  text-align:center;
+  /*width: 600px;*/
+  margin-left: 20px;
+}
+
+#a {
+  background:url(dumbbells.png) no-repeat center center;
+  float:left;
+  background-color: #F6F6F6;
+}
+
+#b {
+  background:url(search.png) no-repeat center center;
+  float: left;
+  background-color: #F6F6F6;
+}
+
+#c {
+  background:url(checkbox.png) no-repeat center center;
+  float: left;
+  background-color: #F6F6F6;
+}
+
+.iconClass {
+  text-align: center;
+  margin-left: 75px;
+  padding-top: 75px;
+}
+
+#search {
+  text-align: center;
+  padding-top: 75px;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+#liftsIndex {
+  text-align: center;
+  background-color: #F6F6F6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#newLiftForm {
+  padding-top: 50px;
+  background-color: #F6F6F6;
+  text-align: center;
+}
+
+#workoutsIndex {
+  text-align: center;
+  padding-top: 25px;
+  background-color: #F6F6F6;
+}
+
+h1{
+  font-family: "Helvetica",Helvetica,Arial,serif;
+  color: #005580;
+}
+
+#videoSearch {
+  text-align: center;
+}

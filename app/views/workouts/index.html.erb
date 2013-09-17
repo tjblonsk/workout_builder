@@ -1,5 +1,6 @@
-<h1>These are your workouts!</h1>
+<h1>Workouts</h1>
 
+<div id="workoutsIndex">
 <ul>
   <% @workouts.each do |wo| %>
     <li><h4><a href="/workouts/<%= wo.id %>"><%= wo.name %></a></h4> (<%= wo.videos.count %> videos)
@@ -13,6 +14,9 @@
     </li></br>
   <% end %>
 </ul>
+</div>
 
-<h3><%= link_to "Create Workout", new_workout_path %></h3>
+
+<h3 style="text-align:center; padding-top:25px"><%= link_to "Create Workout", new_workout_path %></h3>
+
 

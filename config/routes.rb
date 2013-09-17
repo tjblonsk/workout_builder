@@ -36,6 +36,8 @@ YouTube::Application.routes.draw do
 
   get '/users/:id' => 'users#show'
 
+  get '/users/workouts/:id' => 'users#show_workouts'
+
   delete '/lifts/:id' => 'lifts#destroy'
 
 
@@ -46,7 +48,7 @@ YouTube::Application.routes.draw do
   get '/workouts/new' => 'workouts#new', as: :new_workout
 
 
-  post '/workouts' => 'workouts#create'
+  post '/workouts' => 'workouts#create', as: :workouts_create
 
 
   #show details of a specific workout

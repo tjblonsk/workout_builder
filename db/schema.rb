@@ -15,14 +15,16 @@ ActiveRecord::Schema.define(:version => 20130717203902) do
 
   create_table "lifts", :force => true do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
     t.string   "username"
-    t.string   "password"
+    t.integer  "videos_id"
+    t.integer  "lifts_id"
+    t.integer  "workouts_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
@@ -40,16 +42,12 @@ ActiveRecord::Schema.define(:version => 20130717203902) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-  create_table "users_videos", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "video_id"
-  end
-
   create_table "videos", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "url"
     t.integer  "lift_id"
+    t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

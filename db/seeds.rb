@@ -6,9 +6,9 @@ Lift.create(name: "Lower Body")
 Lift.create(name: "Cardio")
 Lift.create(name: "Core")
 
-User.create(name: "Tim", password: "testtest", email: "test@test.com")
-User.create(name: "Alina", password: "testtest", email: )
-User.create(name: "Chris", password: "testtest")
+User.create(username: "Tim", password: "testtest", email: "tim@test.com")
+User.create(username: "Alina", password: "testtest", email: "alina@test.com")
+User.create(username: "Chris", password: "testtest", email: "chris@test.com")
 
 Workout.create(name: "Back/bis")
 Workout.create(name: "shoulders/tris")

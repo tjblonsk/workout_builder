@@ -1,10 +1,14 @@
 <h1>Search for a Video!</h1>
 
-
+<div id="search">
 <%= form_tag("/search/videos", method: "get") do %>
-  <%= label_tag(:description, "Search for:") %>
+  <%= label_tag(:description, "Search:") %>
   <%= text_field_tag(:description) %>
   <%= submit_tag("Search") %>
 <% end %>
+</div>
 
+ <div class="span4" id="b" style="text-align:center; margin-left:300px; margin-right:auto">
+      <h5>Search and save videos from YouTube</h5>
+    </div>
 

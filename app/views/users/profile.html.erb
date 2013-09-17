@@ -1,16 +1,28 @@
-<h1>Hello <%= current_user.username %></h1>
-<h2>Welcome to WorkoutBuilder!</h2>
+<div class="profile_index_class">
+  <h1>Welcome to WorkoutBuilder, <%= current_user.username %>!</h1>
 
-<br />
-<ul class="home">
-  <%= link_to "Home", index_path %>
-<%= link_to "Search", search_path %>
-<%= link_to "My Lifts", lifts_index_path %>
-<%= link_to "My Workouts", workouts_index_path %></ul>
-</br>
-</br>
-<p class="lead">WorkoutBuilder is the best way to find and quickly reference exercise specific instructional videos on YouTube. It allows you to find and reference videos based on muscle category or a specific workout that you create!</p>
+  <br />
+  <ul class="home">
+    <%= link_to "Home", index_path %>
+  <%= link_to "Search", search_path %>
+  <%= link_to "My Lifts", lifts_index_path %>
+  <%= link_to "My Workouts", workouts_index_path %></ul>
+  </br>
+  </br>
+  <div class="lead">WorkoutBuilder is the best way to find and quickly reference exercise specific instructional videos on YouTube. It allows you to find and reference videos based on muscle category or a specific workout that you create!</div>
 
 
+  <div class="iconClass">
+    <div class="span4" id="a">
+      <h5>Create a lift category</h5>
+    </div>
+    <div class="span4" id="b">
+      <h5>Search and save videos from YouTube</h5>
+    </div>
+    <div class="span4" id="c">
+      <h5>Create and save videos to a workout</h5>
+    </div>
+  </div>
+  </div>
 
 

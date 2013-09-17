@@ -2,15 +2,15 @@ class CreateTables < ActiveRecord::Migration
   def up
     create_table :users do |t|
       t.string :username
-      t.integer :video_id
-      t.integer :lift_id
-      t.integer :workouts
+      t.references :videos
+      t.references :lifts
+      t.references :workouts
       t.timestamps
     end
 
     create_table :lifts do |t|
       t.string :name
-      t.integer :user_id
+      t.references :user
       t.timestamps
     end
 
@@ -18,15 +18,15 @@ class CreateTables < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :url
-      t.integer :lift_id
-      t.integer :user_id
+      t.references :lift
+      t.references :user
       t.timestamps
     end
 
     create_table :workouts do |t|
      t.string :name
      t.string :description
-     t.integer :user_id
+     t.references :user
      t.timestamps
     end
 

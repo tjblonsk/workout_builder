@@ -1,5 +1,6 @@
-
+<div id="videoSearch">
   <% @videos.videos.each do |video| %>
+  <div style="text-align:left; margin-left:200px; background-color: #F6F6F6">
   <ul>
     <li><%= link_to video.title, video.player_url,
      :target => '_blank' %>
@@ -16,8 +17,10 @@
         <li>Dislikes: <%= video.rating.dislikes %></li>
         <li>Total votes: <%= video.rating.rater_count %></li>
     </ul>
+  </div>
     <% end %>
   </br>
+
 
 <%= form_for(@video, :url => create_path, :method => :post)  do |f| %>
   <%= f.label :description %>
@@ -31,6 +34,5 @@
 <% end %>
 
 <% end %>
-
-
+</div>
 

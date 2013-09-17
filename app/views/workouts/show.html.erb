@@ -1,6 +1,7 @@
-<h1>This is workout <%= @workout.name %></h1>(Created: <%= @workout.created_at %>)
+<h1>This is workout <%= @workout.name %><h6 style="text-align:center">(Created: <%= @workout.created_at %>)<h6></h1>
 
-<ul>
+
+<ul style="text-align:center; background-color:#F6F6F6">
 <% @workout.videos.each do |video| %>
   <li><%= link_to video.name, video.url, :target => '_blank' %> ( <%= Lift.find(video.lift_id).name %> ) </li>
   <% end %>

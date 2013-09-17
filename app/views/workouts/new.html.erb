@@ -1,17 +1,16 @@
 <h1>Create a workout now!</h1>
 
-
-<form action="/workouts" method="post">
-  <label for="name">Workout Name</label></br>
-  <input type="text" name="name" placeholder="enter a workout name"></br>
-  <label for="description">Description</label></br>
-  <input type="text" name="description" placeholder="enter a brief description"></br>
+  <%= form_for(@workout, :url => workouts_create_path, :method => :post) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :placeholder => "Chest day, cardio day, etc." %>
+  <%= f.label :description %>
+  <%= f.text_field :description, :placeholder => "This workout is mostly sprints" %>
 
 <h4>Select videos for this workout</h4>
   <% @user.videos.each do |video| %>
     <%= link_to video.name, video.url, :target => '_blank' %> <%= Lift.find(video.lift_id).name %></br>
     <%= check_box_tag "workout[video_ids][]", video.id, @workout.videos.include?(video) %></br>
+    <% end %>
+  <%= f.submit %>
 <% end %>
-<button>save</button>
-</form>
 

@@ -1,10 +1,11 @@
 <h1>Your workout videos!</h1>
-<ul>
-<% @videos.each do |video| %>
-  <li><%= link_to video.name, video.url, :target => '_blank' %>
-      (<%= video.lift_id %>)
-<%= button_to "delete", {:controller => :lifts,
-      :action => 'destroy', :id => video.id },     :method => :delete %>
-  </li>
-  <% end %>
-</ul>
+
+  <ul style="text-align:center; background-color:#F6F6F6">
+  <% @videos.each do |video| %>
+    <li><%= link_to video.name, video.url, :target => '_blank' %>
+        (<%= video.lift_id %>)
+  <%= button_to "delete", {:controller => :lifts,
+        :action => 'destroy', :id => video.id },     :method => :delete %>
+    </li>
+    <% end %>
+  </ul>

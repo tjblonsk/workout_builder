@@ -13,15 +13,9 @@ class WorkoutsController < ApplicationController
 
   #create new workout
   def create
-    workout = Workout.new
-    workout.name = params[:name]
-    workout.description = params[:description]
-    params[:workout][:video_ids].each do |video|
-      workout.videos << Video.find_by_id(video)
-    end
-    current_user.workouts << workout
+    @workout = Workout.create(params[:workout])
+    current_user.workouts << @workout
 
-    # redirect_to workouts_index_path
     redirect_to '/workouts'
   end
 
