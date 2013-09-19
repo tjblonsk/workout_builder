@@ -2,6 +2,8 @@ YouTube::Application.routes.draw do
 
   devise_for :users
 
+
+
   root :to => 'users#index', as: :index
 
   get '/profile' => 'users#profile', as: :profile
@@ -34,7 +36,7 @@ YouTube::Application.routes.draw do
 
   post '/users' => 'users#create'
 
-  get '/users/:id' => 'users#show'
+  # get '/users/:id' => 'users#show'
 
   get '/users/workouts/:id' => 'users#show_workouts'
 
