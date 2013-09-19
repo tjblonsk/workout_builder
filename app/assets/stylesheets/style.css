@@ -28,7 +28,8 @@ h1 {
   padding-left: 20px;
 }
 
-.home a:last-child; {border-right: none}
+.home a:last-child {border-right: none;
+}
 
 
 .profile_index_class {

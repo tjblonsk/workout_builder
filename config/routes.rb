@@ -2,8 +2,6 @@ YouTube::Application.routes.draw do
 
   devise_for :users
 
-
-
   root :to => 'users#index', as: :index
 
   get '/profile' => 'users#profile', as: :profile
