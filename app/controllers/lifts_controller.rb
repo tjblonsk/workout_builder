@@ -5,6 +5,7 @@ class LiftsController < ApplicationController
     @lifts = current_user.lifts
     @lift = Lift.new
     @videos = current_user.videos
+    @user = current_user
 
     # @videos = current_user.videos
 

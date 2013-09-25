@@ -1,23 +1,38 @@
 <h1>Lifts</h1>
 
-<div id="liftsIndex">
-  <ul>
-    <% @lifts.each do |lift| %>
-      <li><h3><a href="/lifts/<%= lift.id %>"><%= lift.name %></a></h3>
-       (<%= lift.videos.count %>)
-      </li></br>
-    <% end %>
-      <li><h3><%= link_to "All Videos",  lifts_videos_path %></h3> (<%= @videos.count %>)
-      </li>
-  </ul>
-</div>
+<% if @user.lifts.count != 0 %>
+  <div id="liftsIndex">
+    <ul>
+      <% @lifts.each do |lift| %>
+        <li><h3><a href="/lifts/<%= lift.id %>"><%= lift.name %></a></h3>
+         (<%= lift.videos.count %>)
+        </li></br>
+      <% end %>
+        <li><h3><%= link_to "All Videos",  lifts_videos_path %></h3> (<%= @videos.count %>)
+        </li>
+    </ul>
+  </div>
 
-<div id="newLiftForm">
-  <h3>Create new lift category</h3>
-  <h6>This will be added to the dropdown in video search</h6>
-  <%= form_for(@lift, :url => videos_path, :method => :post) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, :placeholder => "Chest, cardio, shoulders, etc." %>
-    <%= f.submit %>
-  <% end %>
-</div>
+  <div id="newLiftForm">
+    <h3>Create new lift category</h3>
+    <h6>This will be added to the dropdown in video search</h6>
+    <%= form_for(@lift, :url => videos_path, :method => :post) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :placeholder => "Chest, cardio, shoulders, etc." %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+<% else %>
+
+  <div id="newLiftForm">
+    <h3>Create new lift category</h3>
+    <h6>This will be added to the dropdown in video search</h6>
+    <%= form_for(@lift, :url => videos_path, :method => :post) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :placeholder => "Chest, cardio, shoulders, etc." %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+<% end %>

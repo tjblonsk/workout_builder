@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
   has_many :lifts
   attr_accessible :email, :password, :username, :password_confirmation, :name
 
+  def after_create(user)
+    user.lifts.create(:name => "Cardio")
+    user.lifts.create(:name => "Plyometrics")
+    user.lifts.create(:name => "Upperbody")
+    user.lifts.create(:name => "Lowerbody")
+  end
+
 end
