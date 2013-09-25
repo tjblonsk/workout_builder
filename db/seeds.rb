@@ -12,3 +12,8 @@
 
 # Workout.create(name: "Back/bis")
 # Workout.create(name: "shoulders/tris")
+
+Lift.create(name: "plyometrics")
+Lift.create(name: "cardio")
+Lift.create(name: "upperbody")
+Lift.create(name: "lowerbody")
