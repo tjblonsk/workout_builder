@@ -6,7 +6,7 @@
 # Lift.create(name: "Cardio")
 # Lift.create(name: "Core")
 
-# User.create(username: "Tim", password: "testtest", email: "tim@test.com")
+User.create(username: "Tim", password: "testtest", email: "tim@test.com")
 # User.create(username: "Alina", password: "testtest", email: "alina@test.com")
 # User.create(username: "Chris", password: "testtest", email: "chris@test.com")
 
@@ -17,3 +17,4 @@ Lift.create(name: "plyometrics")
 Lift.create(name: "cardio")
 Lift.create(name: "upperbody")
 Lift.create(name: "lowerbody")
+
